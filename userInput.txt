@@ -1,0 +1,12 @@
+//each exercise line begin with exercise number + ")"
+//exercises with numbers, use only "," for separation of numbers, don't use space or other characters
+1)43
+2)873
+3)21,211,43
+7)4294967292,3
+14)16,3,2,13,5,10,11,8,9,6,7,12,4,15,14,1
+15)7
+//Strings exercises
+//15
+8)мама мыла     раму
+11)€♣⊕dasdas⇔ℜ312!!9540)@*#!@&Å¶¶¥

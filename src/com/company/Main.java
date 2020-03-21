@@ -1,21 +1,18 @@
 package com.company;
 
+import com.company.primitives.MyNumbers;
 import com.company.strings.MyStrings;
+import com.company.utils.UserInputReader;
 
 public class Main {
 
     public static void main(String[] args) {
-        //MyNumbers.intPrint();// ex 1
-        //MyNumbers.degree();// ex 2
-        //MyNumbers.intMax();// ex 3
-        //MyNumbers.doubleMimMax();// ex 4
-        //MyNumbers.largeDoubleToInt();// ex 5
-        //MyNumbers.factorial(1000);// ex 6
-        //MyNumbers.intWithOutSign();// ex 7
+        UserInputReader reader = new UserInputReader("F:/NetCracker/homeWork3/userInput.txt");
 
-        //MyStrings.nonEmptySubStr();// ex 8
-        //MyStrings.equalsStrings();// ex 9
-        //MyStrings.randomString();// ex 10
-        MyStrings.printNotASCII();// ex 11
+        MyNumbers numbers = new MyNumbers(reader);
+        numbers.doExercise();
+
+        MyStrings strings = new MyStrings(reader);
+        strings.doExercise();
     }
 }
