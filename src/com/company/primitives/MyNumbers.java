@@ -11,26 +11,42 @@ public class MyNumbers {
     //exercises with primitives
     private UserInputReader reader;
 
+
     public MyNumbers(UserInputReader reader){
         this.reader = reader;
     }
 
     public void doExercise(){
+
+        List list = reader.readNumbers(1);
         //ex 1
-        int x1 = (int) reader.readNumbers(1).get(0);
-        intPrint(x1);
+        int x1;
+
+        if(list != null && list.size() == 1) {
+            x1 = (int) list.get(0);
+            intPrint(x1);
+        }
+
 
          //ex 2
-        x1 = (int) reader.readNumbers(2).get(0);
-        degree(x1);
+        list = reader.readNumbers(2);
+        if(list != null && list.size() == 1) {
+            x1 = (int) list.get(0);
+            degree(x1);
+        }
 
-        //ex 3
-        List list = reader.readNumbers(3);
-        System.out.println(list.size());
-        x1 = (int) list.get(0);
-        int x2 = (int) list.get(1);
-        int x3 = (int) list.get(2);
-        intMax(x1,x2,x3);
+
+        //ex 3\
+        int x2, x3;
+        list = reader.readNumbers(3);
+        if(list != null && list.size() == 3) {
+
+
+            x1 = (int) list.get(0);
+            x2 = (int) list.get(1);
+            x3 = (int) list.get(2);
+            intMax(x1, x2, x3);
+        }
 
         //exs 4,5,6
         doubleMimMax();
@@ -39,20 +55,32 @@ public class MyNumbers {
 
         //ex 7
         list = reader.readNumbers(7);
-        x1 = (int) list.get(0);
-        x2 = (int) list.get(1);
-        intWithOutSign(x1,x2);
+        if(list != null && list.size() == 2) {
+            x1 = (int) list.get(0);
+            x2 = (int) list.get(1);
+            intWithOutSign(x1, x2);
+        }
 
         //ex 13
         lottery();
 
         //ex 14
         list = reader.readNumbers(14);
-        magicalSquare(formArray(list));
+        if(list != null) {
+            if(list.size() % 2 == 0) {
+                int[][] array = formArray(list);
+                magicalSquare(array);
+            }
+        }
+
 
         //ex 15
-        x1 = (int) reader.readNumbers(15).get(0);
-        pascalTriangle(x1);
+        list = reader.readNumbers(15);
+        if(list != null && list.size() == 1) {
+            x1 = (int) list.get(0);
+            pascalTriangle(x1);
+        }
+
     }
 
     //exercise 1
@@ -229,19 +257,11 @@ public class MyNumbers {
         System.out.println();
     }
 
-    //ex 14 helps methods
+    //ex 14 help methods
     private int[][] formArray(List<Integer> list){
-        double arraySize = Math.sqrt(list.size());
-        if(arraySize % 2d > 0.000001d){
-            try {
-                throw new Exception("Array size is not even");
-            } catch (Exception e) {
-                e.printStackTrace();
-                return null;
-            }
-        }
+        int arraySize = (int) Math.sqrt(list.size());
 
-        int[][] array = new int[(int)arraySize][(int)arraySize];
+        int[][] array = new int[arraySize][arraySize];
 
 
         int i = 0;

@@ -15,7 +15,9 @@ public class MyStrings {
     public void doExercise(){
         //ex 8
         String str = reader.readString(8);
-        nonEmptySubStr(str);
+        if(str != null) {
+            nonEmptySubStr(str);
+        }
 
         //ex 9
         equalsStrings();
@@ -25,7 +27,9 @@ public class MyStrings {
 
         //ex 11
         str = reader.readString(11);
-        printNotASCII(str);
+        if(str != null){
+            printNotASCII(str);
+        }
     }
 
     //exercise 8
@@ -58,7 +62,7 @@ public class MyStrings {
         // or use any methods that return new String
         System.out.println("other way");
         String s3 = "Hello";
-        String s4 = s3.replaceAll("","");
+        String s4 = s3 + "";
 
         System.out.println("s3.equals(s4) : "+s3.equals(s4));
         System.out.println("s3 == s4 : "+(s3 == s4));
