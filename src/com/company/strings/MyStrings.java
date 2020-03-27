@@ -58,8 +58,6 @@ public class MyStrings {
         System.out.println("s1.equals(s2) : "+s1.equals(s2));
         System.out.println("s1 == s2 : "+(s1 == s2));
 
-
-        // or use any methods that return new String
         System.out.println("other way");
         String s3 = "Hello";
         String s4 = s3 + "";
